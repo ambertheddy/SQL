@@ -1,0 +1,41 @@
+CREATE TABLE Lavish_Clothing_Store (Id INTEGER PRIMARY KEY, Quantity INTEGER,Price INTEGER,Color TEXT, Item TEXT);
+
+ 
+
+INSERT INTO Lavish_Clothing_Store VALUES (1,15,20,"Black","Dresses");
+
+INSERT INTO Lavish_Clothing_Store VALUES (2,45,54,"White","Tops");
+
+INSERT INTO Lavish_Clothing_Store VALUES (3,46,54,"Blue","Skirts");
+
+INSERT INTO Lavish_Clothing_Store VALUES (4,84,46,"Yellow","Jeans");
+
+INSERT INTO Lavish_Clothing_Store VALUES (5,44,65,"Black","Shorts");
+
+INSERT INTO Lavish_Clothing_Store VALUES (6,76,14,"Beige","Hats");
+
+INSERT INTO Lavish_Clothing_Store VALUES (7,13,33,"Gucci","Purses");
+
+INSERT INTO Lavish_Clothing_Store VALUES (8,48,22,"Brown","Sunglasses");
+
+INSERT INTO Lavish_Clothing_Store VALUES (9,19,47,"Purple","Leggings");
+
+INSERT INTO Lavish_Clothing_Store VALUES (10,5,50,"Rainbow","Boots");
+
+INSERT INTO Lavish_Clothing_Store VALUES (11,79,6,"Diamond","Jewlery");
+
+INSERT INTO Lavish_Clothing_Store VALUES (12,45,67,"Pink","LipGloss");
+
+INSERT INTO Lavish_Clothing_Store VALUES (13,5,22,"Multi","Earrings");
+
+INSERT INTO Lavish_Clothing_Store VALUES (14,47,8,"Tan","Heels");
+
+INSERT INTO Lavish_Clothing_Store VALUES (15,8,74,"Green","Necklances");
+
+INSERT INTO Lavish_Clothing_Store VALUES (16,32,55,"Orange","Coats");
+
+Display Prices (Ascending)
+Select * FROM Lavish_Clothing_Store ORDER BY price;
+
+Display Total Inventory of Items
+Select Sum(Quantity) FROM Lavish_Clothing_Store;
