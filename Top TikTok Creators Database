@@ -1,0 +1,57 @@
+/* In this database I was able to create tables that gathered information about top TikTok creator's. Using this database I was able to aggregate data using mutiple joins to clearly display creators name, age, followers, and net worth in descending order. */
+
+/*Top 6 Tiktok Creators*/
+CREATE TABLE Famous_Content_Creators (id INTEGER PRIMARY KEY,name TEXT,age INTEGER); 
+
+INSERT INTO Famous_Content_Creators (name,age) VALUES ("Charli_D_Amelio",18);
+INSERT INTO Famous_Content_Creators (name,age) VALUES ("Khaby_Lame",23);
+INSERT INTO Famous_Content_Creators (name,age) VALUES ("Bella_Poarch",26);
+INSERT INTO Famous_Content_Creators (name,age) VALUES ("Addison_Rae",22);
+INSERT INTO Famous_Content_Creators (name,age) VALUES("Will_Smith",54);
+INSERT INTO Famous_Content_Creators (name,age) VALUES ("Zack_King",33);
+
+/*What they are known for on Social Media*/
+CREATE TABLE Talents (id INTEGER PRIMARY KEY,name TEXT,talent TEXT);
+
+INSERT INTO Talents (name,talent) VALUES ("Charli_D_Amelio","dancer");
+INSERT INTO Talents (name,talent) VALUES ("Khaby_Lame","social_media_actor");
+INSERT INTO Talents (name,talent) VALUES ("Bella_Poarch","singer");
+INSERT INTO Talents (name,talent) VALUES ("Addison_Rae","social_media_actress");
+INSERT INTO Talents (name,talent) VALUES ("Will_Smith","actor");
+INSERT INTO Talents (name,talent) VALUES ("Zach_King","digital_magician");
+
+/*Birthday Information*/
+CREATE TABLE Birthdays (id INTEGER PRIMARY KEY,name_id INTEGER,birth_month TEXT,birth_year INTEGER);
+
+INSERT INTO Birthdays (name_id,birth_month,birth_year) VALUES (1,"May",2004);
+INSERT INTO Birthdays (name_id,birth_month,birth_year) VALUES (2,"MARCH",2000);
+INSERT INTO Birthdays (name_id,birth_month,birth_year) VALUES (3,"february",1997);
+INSERT INTO Birthdays (name_id,birth_month,birth_year) VALUES (4,"october",2000);
+INSERT INTO Birthdays (name_id,birth_month,birth_year) VALUES (5,"september",1968);
+INSERT INTO Birthdays (name_id,birth_month,birth_year) VALUES (6,"february",1990);
+
+/*Metrics for Social Media Accounts*/
+CREATE TABLE Metrics (id INTEGER PRIMARY KEY,first_name TEXT,last_name TEXT,followers INTEGER,net_worth INTEGER);
+
+INSERT INTO Metrics (first_name,last_name,followers,net_worth) VALUES ("Charli","D'Amelio",141.1,20000000);
+INSERT INTO Metrics (first_name,last_name,followers,net_worth) VALUES ("Khaby","Lame",139.7,13000000);
+INSERT INTO Metrics (first_name,last_name,followers,net_worth) VALUES ("Bella","Poarch",89.9,2000000);
+INSERT INTO Metrics (first_name,last_name,followers,net_worth) VALUES ("Addison","Rae",87.7,15000000);
+INSERT INTO Metrics (first_name,last_name,followers,net_worth) VALUES ("Will","Smith",72.2,350000000);
+INSERT INTO Metrics (first_name,last_name,followers,net_worth) VALUES ("Zach","King",68.6,3000000);
+
+/* Display Content Creators by Name, Age, Followers and Net Worth in Descending Order */
+SELECT Famous_Content_Creators.name, Famous_Content_Creators.age, Metrics.followers , Metrics.net_worth
+    FROM Famous_Content_Creators
+    LEFT OUTER JOIN Metrics
+    ON Famous_Content_Creators.id=Metrics.id
+    GROUP BY age 
+    ORDER BY  net_worth desc;
+    
+/* Display Creators Under 30 With Over 80mil Followers */
+SELECT Famous_Content_Creators.age,Famous_Content_Creators.name, Metrics.followers
+    FROM Famous_Content_Creators
+    LEFT OUTER JOIN Metrics
+    ON Famous_Content_Creators.id=Metrics.id
+    GROUP BY age
+    HAVING followers > 80.0;
