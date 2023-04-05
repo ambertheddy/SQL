@@ -1,3 +1,3 @@
 # Amber Thedford SQL Portfolio
-First SQL Portfolio 
-Welcome to my Portfolio ! Please explore my navigation of SQL through my files.
+
+## Welcome to my SQL Portfolio !!! This code repository displays examples of SQL I've written. Feel free to look around and leave a comment with feedback.
