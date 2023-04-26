@@ -1,4 +1,5 @@
-/* In this database I was able to create tables that gathered information about top TikTok creator's. Using this database I was able to aggregate data using mutiple joins to clearly display creators name, age, followers, and net worth in descending order. */
+/* In this database I was able to create tables that gathered information about top TikTok creator's. 
+Using this database I was able to aggregate data using mutiple joins to clearly display creators name, age, followers, and net worth in descending order. */
 
 /*Top 6 Tiktok Creators*/
 CREATE TABLE Famous_Content_Creators (id INTEGER PRIMARY KEY,name TEXT,age INTEGER); 
