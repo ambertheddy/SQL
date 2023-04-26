@@ -1,6 +1,6 @@
 #In this SQL code, I'm querying a database that's holding Nexflix data to answer questions about the data. 
 
-1.How many movie titles are there in the database? (movies only, not tv shows)
+1.How many movie titles are there in the database? 
 SELECT * FROM "CharlotteChaze/BreakIntoTech"."netflix_people";
 
 2.When was the most recent batch of tv shows and/or movies added to the database?
